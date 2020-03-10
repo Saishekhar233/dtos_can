@@ -206,7 +206,7 @@ bool mgos_can_transmit(uint8_t *can_data, uint64_t ms)
     return status;
 }
 
-bool mgos_mgos_can_init(void)
+bool mgos_dtos_can_init(void)
 {
     return true;
 }
