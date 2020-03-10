@@ -1,0 +1,39 @@
+author: Delta_Team
+type: lib
+description: Mongoose library for CAN from esp-idf libs
+version: 1.0
+
+sources:
+  - src
+includes:
+  - include
+
+filesystem:
+  - fs
+
+config_schema:
+
+libs:
+  - origin: https://github.com/delta-things/core
+  - origin: https://github.com/delta-things/dtos-ota
+
+tags:
+  - c
+  - core
+#conditions
+conds:
+  - when: mos.platform == "esp32"
+    apply:
+      config_schema:
+       - ["can","o",{title:"CAN configuration"}]
+       - ["can.tx_pin","i", 21, {title:"CAN_TX"}]
+       - ["can.rx_pin","i", 22, {title:"CAN_RX"}]
+       - ["can.baud", "i", 500, {titile:"CAN_BAUD"}]
+       - ["can.mode", "i", 0, {title:"CAN_MODE"}] #0:CAN_MODE_NORMAL, 
+                                                #1:CAN_MODE_NO_ACK, 
+                                                #2:CAN_MODE_LISTEN_ONLY
+       - ["can.extd", "i", 1, {title:"CAN EXTENDED FRAME FORMAT"}]
+       - ["can.dlc", "i", 8, {title:"CAN MAX DATA LENGTH CODE"}]
+       - ["can.identifier", "i", 0x18FFFA64, {title:"CAN_IDENTIFIER"}]
+
+manifest_version: 2017-09-29
