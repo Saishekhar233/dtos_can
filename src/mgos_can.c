@@ -170,7 +170,11 @@ bool mgos_can_transmit(uint8_t *can_data, uint64_t ms)
     message.identifier = mgos_sys_config_get_can_identifier();//0x18FFFA64;
     message.info_can_union.info_can_struct.extd = mgos_sys_config_get_can_extd();//1;
     message.data_length_code = mgos_sys_config_get_can_dlc();//CAN_FRAME_MAX_DLC; //8;
-
+    LOG(LL_INFO, ("Sending Data to CAN: "));
+    for(int i=0; i<sizeof(message.data); i++)
+    {
+       LOG(LL_INFO, ("%x", message.data[i]));
+    }
     ret = can_transmit((can_message_t *)&message, pdMS_TO_TICKS(ms));
     switch(ret)
     {
