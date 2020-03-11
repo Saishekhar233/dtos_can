@@ -130,7 +130,7 @@ bool mgos_can_stop(void)
                 status = true; break;
 
         case ESP_ERR_INVALID_STATE:
-                LOG(LL_ERROR, ("FAILED: Driver is not in stopped state, or is not installed"));
+                LOG(LL_ERROR, ("FAILED: Driver is not in running state, or is not installed"));
                 status = false; break;
 
         default: break;
