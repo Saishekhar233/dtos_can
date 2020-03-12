@@ -151,9 +151,9 @@ bool mgos_can_transmit(can_message_t *can_data, uint64_t ms)
     //message.data_length_code = mgos_sys_config_get_can_dlc();//CAN_FRAME_MAX_DLC; //8;
 
     LOG(LL_INFO, ("Sending Data to CAN: "));
-    for(int i=0; i<strlen((char *)can_data.data); i++)
+    for(int i=0; i<strlen((char *)can_data->data); i++)
     {
-       LOG(LL_INFO, ("%x", can_data.data[i]));
+       LOG(LL_INFO, ("%x", can_data->data[i]));
     }
     ret = can_transmit(can_data, pdMS_TO_TICKS((TickType_t)ms));
     switch(ret)
