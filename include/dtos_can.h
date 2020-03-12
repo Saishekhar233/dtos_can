@@ -23,7 +23,8 @@ bool mgos_can_driver_install(void);
 bool mgos_can_start(void);
 bool mgos_can_stop(void);
 bool mgos_can_driver_uninstall(void);
-bool mgos_can_transmit(uint8_t *data, uint64_t ms);
+//bool mgos_can_transmit(uint8_t *data, uint64_t ms);
+bool mgos_can_transmit(can_message_t *data, uint64_t ms);
 
 #ifdef __cplusplus
 }
