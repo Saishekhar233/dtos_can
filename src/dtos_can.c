@@ -142,9 +142,7 @@ bool mgos_can_transmit(can_message_t *can_data, uint64_t ms)
     esp_err_t ret;
     bool status = 0;
     //uint8_t temp_buf[CAN_FRAME_MAX_DLC] = {0};
-    //strcpy((char *)temp_buf, (char *)can_data);
     //memcpy(temp_buf, can_data, strlen((char *)can_data));
-    //strcpy((char *)message.data, (char *)temp_buf);
     //memcpy(message.data, temp_buf, strlen((char *)temp_buf));
     //message.identifier = mgos_sys_config_get_can_identifier();//0x18FFFA64;
    //message.info_can_union.info_can_struct.extd = mgos_sys_config_get_can_extd();//1;

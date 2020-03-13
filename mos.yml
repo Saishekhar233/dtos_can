@@ -33,7 +33,7 @@ conds:
                                                 #1:CAN_MODE_NO_ACK, 
                                                 #2:CAN_MODE_LISTEN_ONLY
        - ["can.extd", "i", 1, {title:"CAN EXTENDED FRAME FORMAT"}]
-       - ["can.dlc", "i", 8, {title:"CAN MAX DATA LENGTH CODE"}]
+       - ["can.dlc", "i", 8, {title:"CAN MAXIMUM DATA LENGTH CODE"}]
        - ["can.identifier", "i", 0x18FFFA64, {title:"CAN_IDENTIFIER"}]
 
 manifest_version: 2017-09-29
